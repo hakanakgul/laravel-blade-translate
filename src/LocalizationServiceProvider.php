@@ -15,11 +15,12 @@ class LocalizationServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Paketin içindeki varsayılan diller config'ini Laravel'e tanıtıyoruz
-        $this->mergeConfigFrom(
-            __DIR__ . '/config/languages.php',
-            'languages'
-        );
+        // Kullanıcı vendor:publish ile kendi config dosyasını oluşturduysa ona dokunma.
+        // mergeConfigFrom paket varsayılanlarını published config'in üzerine merge eder,
+        // bu yüzden kullanıcının sildiği diller geri gelirdi. Bunun önüne geçiyoruz.
+        if (!file_exists(config_path('languages.php'))) {
+            $this->mergeConfigFrom(__DIR__ . '/config/languages.php', 'languages');
+        }
     }
 
     /**
