@@ -1,4 +1,4 @@
-# Laravel Localization Blade
+# Laravel Blade Translate
 
 Laravel projelerinde çok dilli (i18n) yapıyı sıfır sürtünmeyle kuran, Blade ve PHP dosyalarını otomatik tarayan, Google Translate veya OpenAI ile çeviren ve hazır bir dil seçici bileşeni sunan kapsamlı bir Laravel paketidir.
 
@@ -21,29 +21,14 @@ Geliştirici yalnızca kendi ana dilinde yazar. Gerisi pakete aittir.
 
 ## Kurulum
 
-### Private Repo Kurulumu
-
-Paket özel (private) bir GitHub reposunda barındırıldığı için önce ana projenin `composer.json` dosyasına VCS kaynağı tanıtılmalıdır:
-
-```json
-"repositories": [
-    {
-        "type": "vcs",
-        "url": "git@github.com:hakanakgul/laravel-localization-blade.git"
-    }
-]
-```
-
-Ardından paketi dahil edin:
-
 ```bash
-composer require hakanakgul/laravel-localization-blade:dev-main
+composer require hakanakgul/laravel-blade-translate
 ```
 
 Güncelleme için:
 
 ```bash
-composer update hakanakgul/laravel-localization-blade
+composer update hakanakgul/laravel-blade-translate
 ```
 
 Kurulumdan sonra önbelleği temizleyin:
