@@ -1,0 +1,30 @@
+{
+    "name": "hakanakgul/laravel-blade-translate",
+    "description": "Laravel 12 blade için otomatik dil çevirici",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "stichoza/google-translate-php": "^5.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HakanAkgul\\LaravelLocalizationBlade\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HakanAkgul\\LaravelLocalizationBlade\\LocalizationServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Hakan Akgül",
+            "email": "hakanakgul34@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
