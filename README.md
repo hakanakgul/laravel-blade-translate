@@ -61,15 +61,22 @@ Ayar dosyasını projeye çıkartın:
 php artisan vendor:publish --tag=localization-config
 ```
 
-Açılan `config/languages.php` dosyasında yorum satırlarını kaldırarak istediğiniz dilleri aktif edin:
+Bu komut `config/languages.php` dosyasını projenize kopyalar. **Bundan sonra dil eklemek veya çıkarmak için yalnızca bu dosyayı düzenleyin** — paketteki orijinal dosyaya dokunmayın, değişiklikleriniz yok sayılır.
 
 ```php
+// config/languages.php
 return [
     'tr' => ['country' => 'Türkiye',       'language' => 'Türkçe',   'flag_url' => 'https://flagcdn.com/w40/tr.png'],
     'en' => ['country' => 'United States', 'language' => 'English',  'flag_url' => 'https://flagcdn.com/w40/us.png'],
     'de' => ['country' => 'Germany',       'language' => 'Deutsch',  'flag_url' => 'https://flagcdn.com/w40/de.png'],
     // diğer diller...
 ];
+```
+
+Değişiklikten sonra önbelleği temizleyin:
+
+```bash
+php artisan optimize:clear
 ```
 
 > Bu dosya **yalnızca** hangi dillerin sistemde aktif olacağını ve dil seçicide nasıl gösterileceğini tanımlar. Başka bir şey için kullanılmaz.
