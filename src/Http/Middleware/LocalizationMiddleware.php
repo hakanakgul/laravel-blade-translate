@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Config;
 
 class LocalizationMiddleware
 {
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): \Symfony\Component\HttpFoundation\Response
     {
         // Config dosyasını al (Artık detaylı associative array)
         $availableLocales = Config::get('languages', []);
